@@ -1,0 +1,36 @@
+.movie{
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.movie .main-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.movie img {
+  width: 100vw;
+}
+.movie .main-container .overview {
+  text-align: justify;
+}
+.movie .main-container h1 {
+  color:  #888888;
+}
+.movie .main-container p {
+  color:  #888888;
+}
+.movie .network-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+}
+.movie .network-container img {
+  width: 80px;
+}

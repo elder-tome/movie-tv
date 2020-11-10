@@ -1,0 +1,36 @@
+.tv{
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.tv .main-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.tv img {
+  width: 100vw;
+}
+.tv .main-container .overview {
+  text-align: justify;
+}
+.tv .main-container h1 {
+  color:  #888888;
+}
+.tv .main-container p {
+  color:  #888888;
+}
+.tv .network-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+}
+.tv .network-container img {
+  width: 80px;
+}
