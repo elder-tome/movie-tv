@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import Cast from '../components/Cast';
 import api from '../services/api';
 import './Movie.css';
 
@@ -53,13 +54,14 @@ function Movie() {
       <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="" />
       <div className='main-container'>
         <h1>{movie.title}</h1>
-        <p className='overview'>{movie.overview}</p>
+        <p>{`Nota ${movie.vote_average}`}</p>
+        <p>{movie.release_date}</p>
         {movie.genres.map(genres => (
           <p key={genres.id}>{genres.name}</p>
         ))}
-        {/* <p>{movie.release_date}</p> */}
-        <p>{`Nota ${movie.vote_average}`}</p>
-        {/* <p>{movie.homepage}</p> */}
+        <p className='overview'>{movie.overview}</p>
+        <Cast id={id} media='movie'/>
+        <p>{movie.homepage}</p>
       </div>
     </div>
   );
