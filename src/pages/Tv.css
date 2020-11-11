@@ -13,6 +13,7 @@
 }
 .tv img {
   width: 100vw;
+  border-radius: 0px 0px 20px 20px;
 }
 .tv .main-container .overview {
   text-align: justify;
@@ -22,15 +23,4 @@
 }
 .tv .main-container p {
   color:  #888888;
-}
-.tv .network-container {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #fff;
-}
-.tv .network-container img {
-  width: 80px;
 }
