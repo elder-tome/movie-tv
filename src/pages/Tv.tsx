@@ -1,27 +1,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { MdStar } from "react-icons/md";
 
 import Cast from '../components/Cast';
+import Videos from '../components/Videos';
 import api from '../services/api';
 import './Tv.css';
 
 interface params {
   id: string
 }
-
-// interface cast {
-//   id: number,
-//   name: string,
-//   profile_path: string,
-//   order: number
-// }
-interface video {
-  id: number,
-  name: string,
-  key: string
-}
-
 function Tv() {
 
   const [tv, setTv] = useState({
@@ -43,9 +32,6 @@ function Tv() {
     vote_average: 0.0
   });
 
-  // const [cast, setCast] = useState<cast[]>([]);
-  const [video, setVideo] = useState<video[]>([]);
-
   const { id } = useParams<params>();
 
   useEffect(() => {
@@ -60,42 +46,12 @@ function Tv() {
           language: 'pt-BR'
         }
       });
-      // const responseCast = await api.get(`/tv/${id}/credits`, {
-      //   params: {
-      //     api_key: process.env.REACT_APP_TOKEN,
-      //     language: 'pt-BR'
-      //   }
-      // });
-
-      let responseVideo = await api.get(`/tv/${id}/videos`, {
-        params: {
-          api_key: process.env.REACT_APP_TOKEN,
-          language: 'pt-BR'
-        }
-      });
-
-      if (responseVideo.data.results.length <= 0) {
-        responseVideo = await api.get(`/tv/${id}/videos`, {
-          params: {
-            api_key: process.env.REACT_APP_TOKEN,
-            language: 'en-US'
-          }
-        });
-
-        setVideo(responseVideo.data.results);
-
-      }
-      else {
-        setVideo(responseVideo.data.results);
-      }
 
       setTv(response.data);
-      // setCast(responseCast.data.cast);
 
     })();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [id]);
 
 
   return (
@@ -105,7 +61,8 @@ function Tv() {
         <h1>{tv.name}</h1>
         <p>{tv.first_air_date}</p>
         <p>{tv.in_production ? 'Em Produção' : 'Produção finalizada'}</p>
-        <p>{`Nota ${tv.vote_average}`}</p>
+        <MdStar className='star'/>
+        <p>{tv.vote_average}</p>
         {tv.genres.map(genres => (
           <p key={genres.id}>{genres.name}</p>
         ))}
@@ -114,14 +71,7 @@ function Tv() {
         <p>{`${tv.number_of_episodes} Episódeos`}</p>
         <p>{`${tv.episode_run_time} minutos`}</p>
         <Cast  media='tv' id={id}/>
-        {video.map(video => (
-          <div className='video-container'>
-            <div className='videos' key={video.id}>
-              <p>{video.name}</p>
-              <p>{`https://www.youtube.com/watch?v=${video.key}`}</p>
-            </div>
-          </div>
-        ))}
+        <Videos media='tv' id={id}/>
         <p>{tv.homepage}</p>
       </div>
     </div>

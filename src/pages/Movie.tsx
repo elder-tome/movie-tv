@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Cast from '../components/Cast';
+import Videos from '../components/Videos';
 import api from '../services/api';
 import './Movie.css';
 
@@ -60,7 +61,8 @@ function Movie() {
           <p key={genres.id}>{genres.name}</p>
         ))}
         <p className='overview'>{movie.overview}</p>
-        <Cast id={id} media='movie'/>
+        <Cast media='movie' id={id}/>
+        <Videos media='movie' id={id}/>
         <p>{movie.homepage}</p>
       </div>
     </div>
