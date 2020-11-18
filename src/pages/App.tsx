@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { slide as Menu } from 'react-burger-menu';
+import { useHistory, Link } from 'react-router-dom';
 
+import media_player_logo2 from '../img/media_player_logo2.svg';
+import mdi_menu from '../img/mdi_menu.svg';
+import mdi_local_movies from '../img/mdi_local_movies.svg';
+import mdi_tv from '../img/mdi_tv.svg';
+import search from '../img/search.svg';
 import api from '../services/api';
 import './App.css';
 
@@ -29,9 +35,9 @@ function App() {
   useEffect(() => {
 
     (async function loadList() {
-      
+
       const responseTrending = await api.get('/trending/all/day', {
-        params: { 
+        params: {
           api_key: process.env.REACT_APP_TOKEN,
           language: 'pt-BR',
           page: 1
@@ -39,7 +45,7 @@ function App() {
       });
 
       const responseMovie = await api.get('/movie/popular', {
-        params: { 
+        params: {
           api_key: process.env.REACT_APP_TOKEN,
           language: 'pt-BR',
           page: 1
@@ -47,7 +53,7 @@ function App() {
       });
 
       const responseTv = await api.get('/tv/popular', {
-        params: { 
+        params: {
           api_key: process.env.REACT_APP_TOKEN,
           language: 'pt-BR',
           page: 1
@@ -61,44 +67,85 @@ function App() {
     })();
 
   }, []);
-  
-  function handleClickTrending(trending: trending){
+
+  function handleClickTrending(trending: trending) {
     history.push(`/${trending.media_type}/${trending.id}`);
   }
 
-  function handleClickMovie(movie: movie){
+  function handleClickMovie(movie: movie) {
     history.push(`/movie/${movie.id}`);
   }
 
-  function handleClickTv(tv: tv){
+  function handleClickTv(tv: tv) {
     history.push(`/tv/${tv.id}`);
   }
 
   return (
     <div className="App">
-      <h1 className='tags'>TENDÊNCIAS DO DIA</h1>
-      <div className='container'>
-        {trending.map(trending => (
-          <button key={trending.id} onClick={() => handleClickTrending(trending)}>
-            <img src={`https://image.tmdb.org/t/p/w500${trending.poster_path}`} alt=""/>
-          </button>
-        ))}
+      <Menu 
+        className='menu' 
+        customBurgerIcon={<img src={mdi_menu} alt=""/>}
+        customCrossIcon={ false }
+        width={250}
+      >
+        <img src={media_player_logo2} alt=""/>
+        <Link to='/tv' className='link'>Ação</Link>
+        <Link to='/tv' className='link'>Aventura</Link>
+        <Link to='/tv' className='link'>Comédia</Link>
+        <Link to='/tv' className='link'>Drama</Link>
+        <Link to='/tv' className='link'>Ficção científica</Link>
+        <Link to='/tv' className='link'>Romance</Link>
+        <Link to='/tv' className='link'>Terror</Link>
+      </Menu>
+      <div className='header'>
+        <h1 className='subtitle'>FILMES</h1>
       </div>
-      <h1 className='tags'>FILMES POPULARES</h1>
-      <div className='container'>
-        {movieListPopular.map(movie => (
-          <button key={movie.id} onClick={() => handleClickMovie(movie)}>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt=""/>
-          </button>
-        ))}
+      <Link to='/search' className='button-search'>
+        <img src={search} alt=""/>
+      </Link>
+      <div className='main-container'> 
+        <h1 className='text'>Em cartaz</h1>
+        <div className='list-container'>
+          {trending.map(trending => (
+            <button key={trending.id} onClick={() => handleClickTrending(trending)}>
+              <img src={`https://image.tmdb.org/t/p/w500${trending.poster_path}`} alt="" />
+            </button>
+          ))}
+        </div>
+        <h1 className='text'>Porximos Lançamentos</h1>
+        <div className='list-container'>
+          {movieListPopular.map(movie => (
+            <button key={movie.id} onClick={() => handleClickMovie(movie)}>
+              <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+            </button>
+          ))}
+        </div>
+        <h1 className='text'>Melhores Notas</h1>
+        <div className='list-container'>
+          {tvListPopular.map(tv => (
+            <button key={tv.id} onClick={() => handleClickTv(tv)}>
+              <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" />
+            </button>
+          ))}
+        </div>
+        <h1 className='text'>Populares</h1>
+        <div className='list-container'>
+          {tvListPopular.map(tv => (
+            <button key={tv.id} onClick={() => handleClickTv(tv)}>
+              <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt="" />
+            </button>
+          ))}
+        </div>
       </div>
-      <h1 className='tags'>SÉRIES POPULARES</h1>
-      <div className='container'>
-        {tvListPopular.map(tv => (
-          <button key={tv.id} onClick={() => handleClickTv(tv)}>
-            <img src={`https://image.tmdb.org/t/p/w500${tv.poster_path}`} alt=""/>
-          </button>
-        ))}
+      <div className='bar'>
+        <Link to='/' className='link'>
+          <img src={mdi_local_movies} alt=""/>
+          FILMES
+        </Link>
+        <Link to='/tv' className='link'>
+          <img src={mdi_tv} alt=""/>
+          SÉRIES
+        </Link>
       </div>
     </div>
   );
