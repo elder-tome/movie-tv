@@ -1,0 +1,81 @@
+.Search {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Search .main-container {
+  height: 100%;
+  padding: 20px;
+}
+.Search .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 0px;
+  outline: 0;
+}
+.Search .main-container .secund-container {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.Search .main-container .secund-container img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+.Search .main-container .secund-container input {
+  width: 355px;
+  height: 40px;
+  border: 0px;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  outline: 0;
+}
+.Search .main-container .search-container {
+  height: 350px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.Search .main-container .search-container .movie-tv{
+  text-align: start;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  padding: 0px;
+  line-height: 5px;
+  background-color: transparent;
+  border: 0px;
+  /* outline: 0; */
+  margin-bottom: 10px;
+}
+.Search .bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Search .bar img {
+  margin-right: 20px;
+}
+.Search .bar .link {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+}

@@ -2,12 +2,13 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 .App .menu {
-  background: #000;
   padding-top: 20px;
   display: flex;
   justify-content: center;
+  background-color: #000;
 }
 .App .menu img {
   margin-bottom: 30px;
@@ -34,26 +35,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
 }
 .button-search{
   position: fixed;
-  top: 21px;
+  top: 20px;
   right: 20px;
   background-color: transparent;
   border-radius: 5px;
   border: 0px;
 }
 .App .main-container {
+  /* background-color: aqua; */
+  height: calc(100% - 140px);
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 85px;
-  padding-bottom: 85px;
   overflow-y: scroll;
-  background-color: #121212;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+.App .main-container .text{
+  margin-top: 30px;
 }
 .App .main-container .list-container {
-  height: 170px;
+  height: 165px;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
