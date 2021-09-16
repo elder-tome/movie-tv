@@ -1,0 +1,120 @@
+.movieContainer main {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 72px;
+  padding: 20px;
+}
+.movieContainer main button {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  font-size: 1rem;
+  color: #F2F2F2;
+  background: linear-gradient(100deg, #E100D8 -20%, #7809E7 100%);
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.movieContainer main button:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+.movieContainer main h2 {
+  font-size: 1.285rem;
+  font-weight: normal;
+  color: #F2F2F2;
+  margin-top: 3px;
+}
+.movieContainer main section > div {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 0 20px 17px;
+}
+.movieContainer main section div a + a {
+  margin-left: 10px;
+}
+.movieContainer main section div a img {
+  min-width: calc(105px * 1.1);
+  height: calc(154px * 1.1);
+  border-radius: 10px;
+}
+.movieContainer .blur {
+  filter: blur(3px);
+  transition: 0.2s;
+}
+.notActive {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.modalContainer {
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(17, 17, 17, 0.8);
+  z-index: 1;
+  transition: 0.2s;
+}
+.modalContainer .modal {
+  max-width: 600px;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222;
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+.modalContainer .modal nav {
+  width: 100%;
+}
+.modalContainer .modal nav ul li {
+  list-style: none;
+  margin-bottom: 1px;
+  background-color: #333;
+}
+.modalContainer .modal nav ul li:first-child {
+  border-radius: 10px 10px 0 0;
+}
+.modalContainer .modal nav ul li a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #AAA;
+  padding: 20px 0;
+}
+.modalContainer .modal button {
+  width: 100%;
+  font-size: 14px;
+  background-color: #333;
+  color: #aaa;
+  padding: 20px 0;
+  border-radius: 0px 0px 10px 10px;
+  cursor: pointer;
+  color: #ff7d7d;
+}
+
+@media ( max-width: 394px ) {
+  .movieContainer main section div a img {
+    min-width: calc(105px * 1.0);
+    height: calc(154px * 1.0);
+  }
+}
+@media ( max-width: 374px ) {
+  .movieContainer main section div a + a {
+    margin-left: 5px;
+  }
+  .movieContainer main section div a img {
+    min-width: calc(105px * 0.87);
+    height: calc(154px * 0.85);
+  }
+}

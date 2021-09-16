@@ -1,0 +1,48 @@
+.searchListContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 96px 16px 16px;
+  background-color: #222;
+}
+.searchListContainer .card {
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+  background-color: #333;
+  text-decoration: none;
+}
+.searchListContainer .card + .card {
+  margin-top: 24px;
+}
+.searchListContainer .card div {
+  width: 100%;
+  padding: 16px;
+}
+.searchListContainer .card img {
+  border-radius: 8px 0px 0px 8px;
+}
+.searchListContainer .card div h2 {
+  color: #F2F2F2;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+}
+.searchListContainer .card div span {
+  display: block;
+  margin-top: 8px;
+  color: #8A8A8A;
+  text-align: left;
+}
+.notFoundContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+.notFoundContainer span {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #8A8A8A;
+}

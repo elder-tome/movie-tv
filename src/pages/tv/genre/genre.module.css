@@ -1,0 +1,39 @@
+.genresContainer main {
+  margin-top: 72px;
+  padding: 24px 16px 16px;
+}
+.genresContainer main h2 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #F2F2F2;
+  margin-bottom: 8px;
+}
+.genresContainer main div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 0;
+}
+.genresContainer main div a img {
+  width: calc(105px * 1.1);
+  height: calc(154px * 1.1);
+  border-radius: 8px;
+}
+
+@media ( max-width: 394px ) {
+  .genresContainer main div {
+    gap: 8px;
+  }
+  .genresContainer main div a img {
+    width: calc(105px * 1);
+    height: calc(154px * 1);
+  }
+}
+@media ( max-width: 374px ) {
+  .genresContainer main div {
+    justify-content: center;
+    gap: 8px;
+  }
+}

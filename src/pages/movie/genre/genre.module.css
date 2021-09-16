@@ -1,0 +1,44 @@
+.genresContainer main {
+  margin-top: 72px;
+  padding: 20px;
+}
+.genresContainer main h2 {
+  font-size: 1.285rem;
+  font-weight: normal;
+  color: #F2F2F2;
+  margin-top: 3px;
+  margin-bottom: 20px;
+
+}
+.genresContainer main div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px 0;
+}
+.genresContainer main div a img {
+  width: calc(105px * 1.1);
+  height: calc(154px * 1.1);
+  border-radius: 10px;
+}
+
+@media ( max-width: 394px ) {
+  .genresContainer main div {
+    gap: 10px;
+  }
+  .genresContainer main div a img {
+    width: calc(105px * 1);
+    height: calc(154px * 1);
+  }
+}
+@media ( max-width: 374px ) {
+  .genresContainer main h2 {
+    text-align: center;
+  }
+  .genresContainer main div {
+    justify-content: center;
+    gap: 20px;
+  }
+}

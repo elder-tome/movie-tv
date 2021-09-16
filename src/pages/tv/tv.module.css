@@ -1,0 +1,128 @@
+.tvContainer main {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 72px;
+  padding: 16px;
+}
+.tvContainer main button {
+  max-width: 500px;
+  width: 100%;
+  margin-top: 8px;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #222222;
+  background: #FF4B4B;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.tvContainer main button:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+.tvContainer main h2 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #F2F2F2;
+  margin-top: 24px;
+}
+.tvContainer main section > div {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 0 16px 6px;
+}
+.tvContainer main section div a + a {
+  margin-left: 8px;
+}
+.tvContainer main section div a img {
+  min-width: calc(105px * 1.1);
+  height: calc(154px * 1.1);
+  border-radius: 8px;
+}
+.tvContainer .blur {
+  filter: blur(3px);
+  transition: 0.2s;
+}
+.notActive {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.modalContainer {
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(17, 17, 17, 0.8);
+  z-index: 1;
+  transition: 0.2s;
+}
+.modalContainer .modal {
+  max-width: 600px;
+  width: calc(100% - 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222;
+  border-radius: 8px;
+  margin-bottom: 150px;
+}
+.modalContainer .modal nav {
+  width: 100%;
+}
+.modalContainer .modal nav ul li {
+  list-style: none;
+  margin-bottom: 1px;
+  background-color: #333;
+}
+.modalContainer .modal nav ul li:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.modalContainer .modal nav ul li a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: #8A8A8A;
+  padding: 19px 0;
+}
+.modalContainer .modal button {
+  width: 100%;
+  font-size: 16px;
+  background-color: #333;
+  padding: 19px 0;
+  border-radius: 0px 0px 8px 8px;
+  cursor: pointer;
+  color: #ff7d7d;
+}
+@media ( min-width: 1024px ) {
+  .tvContainer main section div a + a {
+    margin-left: 16px;
+  }
+  .tvContainer main section div a img {
+    min-width: calc(105px * 1.5);
+    height: calc(154px * 1.5);
+  }
+}
+@media ( max-width: 394px ) {
+  .tvContainer main section div a img {
+    min-width: calc(105px * 1.0);
+    height: calc(154px * 1.0);
+  }
+}
+@media ( max-width: 374px ) {
+  .tvContainer main section div a + a {
+    margin-left: 5px;
+  }
+  .tvContainer main section div a img {
+    min-width: calc(105px * 0.87);
+    height: calc(154px * 0.85);
+  }
+}

@@ -1,0 +1,57 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 0 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+.header .menu {
+  padding-top: 56px;
+  margin-left: -16px;
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+  font-size: 16px;
+}
+.header .menu .nav {
+  margin-top: 56px;
+}
+.header .menu .nav ul li + li {
+  margin-top: 24px;
+}
+.header .menu .nav ul li a {
+  padding: 12px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  color: #8A8A8A;
+}
+.header .constainerInput {
+  display: flex;
+  max-width: 500px;
+  width: calc(100% - 50px);
+  background-color: #222222;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+.header .constainerInput img {
+  margin: 0 12px;
+}
+.header div input {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 0;
+  background-color: transparent;
+  color: #F2F2F2;
+}
+.header div input::-webkit-search-cancel-button {
+  margin-right: 12px;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: url('/icons/close.svg');
+}
