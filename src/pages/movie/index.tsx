@@ -37,18 +37,13 @@ export default function Movie({ nowPlaying, popular, topRated }: movieProps) {
           <nav>
             <ul>
               <li>
-                <Link href='/movie/genre/878'>
-                  <a>Ficção Científica</a>
-                </Link>
-              </li>
-              <li>
                 <Link href='/movie/genre/16'>
                   <a>Animação</a>
                 </Link>
               </li>
               <li>
-                <Link href='/movie/genre/10749'>
-                  <a>Romance</a>
+                <Link href='/movie/genre/28'>
+                  <a>Ação</a>
                 </Link>
               </li>
               <li>
@@ -57,13 +52,18 @@ export default function Movie({ nowPlaying, popular, topRated }: movieProps) {
                 </Link>
               </li>
               <li>
-                <Link href='/movie/genre/53'>
-                  <a>Thriller</a>
+                <Link href='/movie/genre/18'>
+                  <a>Drama</a>
                 </Link>
               </li>
               <li>
-                <Link href='/movie/genre/18'>
-                  <a>Drama</a>
+                <Link href='/movie/genre/878'>
+                  <a>Ficção Científica</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/movie/genre/10749'>
+                  <a>Romance</a>
                 </Link>
               </li>
               <li>
@@ -72,8 +72,8 @@ export default function Movie({ nowPlaying, popular, topRated }: movieProps) {
                 </Link>
               </li>
               <li>
-                <Link href='/movie/genre/28'>
-                  <a>Ação</a>
+                <Link href='/movie/genre/53'>
+                  <a>Thriller</a>
                 </Link>
               </li>
             </ul>

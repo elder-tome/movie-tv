@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import api from '../../services/api';
 import styles from './details.module.css';
-import Header from '../../components/header';
 
 type movieProps = {
   movie: {
@@ -66,7 +66,6 @@ type movieProps = {
 export default function Details({ movie }: movieProps) {
   return (
     <div className={styles.datailsContainer}>
-      {/* <Header /> */}
       <main>
         <section>
           <section>
@@ -74,8 +73,8 @@ export default function Details({ movie }: movieProps) {
               className={styles.backdrop}
               src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
               alt="Imagem de fundo"
-              width={659}
-              height={368}
+              width={697}
+              height={390}
               layout='fixed'
             />
             <div></div>
@@ -83,34 +82,60 @@ export default function Details({ movie }: movieProps) {
               <Image
                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                 alt="Imagem de fundo"
-                width={166}
+                width={167}
                 height={250}
                 layout='fixed'
               />
+              <div className={styles.containerContentRatingAndStar}>
+                {
+                  movie.release_dates.results.map(iten => (
+                    iten.iso_3166_1 === 'BR' &&
+                    <span key={iten.iso_3166_1} className={styles.contentRating}>{iten.release_dates[0].certification}</span>
+                  ))
+                }
+                <span className={styles.star}>
+                  <img src="/icons/star.svg" alt="estrela" />
+                  {movie.vote_average}
+                </span>
+              </div>
             </div>
           </section>
           <section>
             <h1>{movie.title}</h1>
-            {
-              movie.release_dates.results.map(iten => (
-                iten.iso_3166_1 === 'BR' &&
-                <span key={iten.iso_3166_1} className={styles.contentRating}>{iten.release_dates[0].certification}</span>
-              ))
-            }
             <div className={styles.containerGenresEndDate}>
               {
-                movie.genres.map((genres, index) => (
-                  <span key={genres.id} >{
-                    index != 0 ? `, ${genres.name}` : genres.name
-                  }</span>
+                movie.genres.map((genres) => (
+                  <Link href={`/tv/genre/${genres.id}`} key={genres.id}>
+                    <a>
+                      <span>{
+                        genres.name
+                      }</span>
+                    </a>
+                  </Link>
                 ))
               }
-              <span>{` .  (${movie.release_date.substr(0, 4)})`}</span>
             </div>
-            <span className={styles.imdb}>
-              <img src="/icons/IMDB.svg" alt="imdb" />
-              {movie.vote_average}
+            <h2>Sinopse</h2>
+            <p>{movie.overview}</p>
+            {/* target="_blank" */}
+            <Link href={movie.homepage} >
+              <button>
+                <img src="/icons/vector.svg" alt="assistir" />
+                Assista agora
+              </button>
+            </Link>
+          </section>
+        </section>
+        <section>
+          <h2>informações</h2>
+          <div className={styles.boxInfomation}>
+            <h3>Nome original</h3>
+            <span>{movie.original_title}</span>
+            <h3>Lançamento</h3>
+            <span>
+              {new Date(Date.parse(movie.release_date)).toLocaleDateString('pt-BR')}
             </span>
+            <h3>Duração</h3>
             <div className={styles.containerSpans}>
               {
                 movie.runtime < 59 ?
@@ -126,35 +151,16 @@ export default function Details({ movie }: movieProps) {
                   }</span>
               }
             </div>
-            <h2>Sinopse</h2>
-            <p>{movie.overview}</p>
-            <a href={movie.homepage} target="_blank" >
-              <img src="/icons/vector.svg" alt="assistir" />
-              Assista agora
-            </a>
-          </section>
-        </section>
-        <section>
-          <h2>informações</h2>
-          <div>
-            <h3>Nome original</h3>
-            <span>{movie.original_title}</span>
-            {/* <h3>Status</h3>
-            {
-              movie.in_production ? <span>Em produção</span> : <span>produção finalizada</span>
-            } */}
-            <h3>Lançamento</h3>
-            <span>
-              {new Date(Date.parse(movie.release_date)).toLocaleDateString('pt-BR')}
-            </span>
             <h3>Emissora</h3>
             {
               movie.production_companies[0].logo_path || movie.production_companies[0].logo_path != '' ?
-                <img
-                  src={`https://image.tmdb.org/t/p/h50${movie.production_companies[0].logo_path}`.replace('png', 'svg')}
-                  alt="imagem da emissora"
-                  height={50}
-                />
+                <div className={styles.boxNetworkLogo}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/h50${movie.production_companies[0].logo_path}`.replace('png', 'svg')}
+                    alt="imagem da emissora"
+                    height={50}
+                  />
+                </div>
                 :
                 <span>{movie.production_companies[0].name}</span>
             }

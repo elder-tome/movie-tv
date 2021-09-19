@@ -2,16 +2,17 @@
   max-width: 1440px;
   margin: 0 auto;
   margin-top: 72px;
-  padding: 20px;
+  padding: 16px;
 }
 .movieContainer main button {
+  max-width: 500px;
   width: 100%;
-  margin-bottom: 30px;
+  margin-top: 8px;
   padding: 20px 0;
-  font-size: 1rem;
-  color: #F2F2F2;
-  background: linear-gradient(100deg, #E100D8 -20%, #7809E7 100%);
-  border-radius: 5px;
+  font-size: 16px;
+  color: #222222;
+  background: #FF4B4B;
+  border-radius: 8px;
   transition: 0.2s;
 }
 .movieContainer main button:hover {
@@ -19,27 +20,27 @@
   cursor: pointer;
 }
 .movieContainer main h2 {
-  font-size: 1.285rem;
+  font-size: 16px;
   font-weight: normal;
   color: #F2F2F2;
-  margin-top: 3px;
+  margin-top: 24px;
 }
 .movieContainer main section > div {
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding: 0 20px 17px;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 0 16px 6px;
 }
 .movieContainer main section div a + a {
-  margin-left: 10px;
+  margin-left: 8px;
 }
 .movieContainer main section div a img {
   min-width: calc(105px * 1.1);
   height: calc(154px * 1.1);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 .movieContainer .blur {
   filter: blur(3px);
@@ -64,13 +65,13 @@
 }
 .modalContainer .modal {
   max-width: 600px;
-  width: calc(100% - 40px);
+  width: calc(100% - 32px);
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #222;
-  border-radius: 10px;
-  margin-bottom: 100px;
+  border-radius: 8px;
+  margin-bottom: 150px;
 }
 .modalContainer .modal nav {
   width: 100%;
@@ -81,28 +82,35 @@
   background-color: #333;
 }
 .modalContainer .modal nav ul li:first-child {
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 .modalContainer .modal nav ul li a {
   display: inline-block;
   width: 100%;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
-  color: #AAA;
-  padding: 20px 0;
+  font-size: 16px;
+  color: #8A8A8A;
+  padding: 19px 0;
 }
 .modalContainer .modal button {
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   background-color: #333;
-  color: #aaa;
-  padding: 20px 0;
-  border-radius: 0px 0px 10px 10px;
+  padding: 19px 0;
+  border-radius: 0px 0px 8px 8px;
   cursor: pointer;
   color: #ff7d7d;
 }
-
+@media ( min-width: 1024px ) {
+  .movieContainer main section div a + a {
+    margin-left: 16px;
+  }
+  .movieContainer main section div a img {
+    min-width: calc(105px * 1.5);
+    height: calc(154px * 1.5);
+  }
+}
 @media ( max-width: 394px ) {
   .movieContainer main section div a img {
     min-width: calc(105px * 1.0);

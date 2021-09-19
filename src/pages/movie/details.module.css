@@ -3,7 +3,16 @@
   margin: 0 auto;
   margin-top: 72px;
   overflow-x: hidden;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
+}
+.datailsContainer main h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #F2F2F2;
+  margin-bottom: 8px;
+}
+.datailsContainer main span {
+  color: #8A8A8A;
 }
 .datailsContainer main > section:first-child section:first-child {
   display: flex;
@@ -14,159 +23,174 @@
 .datailsContainer main > section:first-child section:first-child > div {
   width: 100%;
   height: 100%;
-  background-color: black;
   position: absolute;
   z-index: 0;
-  background: linear-gradient(180deg, rgba(34, 34, 34, 0.2) 0%, #222 100%);
+  background: linear-gradient(180deg, rgba(34, 34, 34, 0.2) 0%, #222222 100%);
 }
 .datailsContainer main > section:first-child section:first-child .poster {
   display: flex;
-  justify-content: center;
-  padding-top: 20px;
+  align-items: flex-end;
+  padding: 0 16px;
+  padding-bottom: 116px;
+  gap: 0 24px;
 }
 .datailsContainer main > section:first-child section:first-child .poster img {
-  border-radius: 10px;
+  border-radius: 8px;
+}
+.datailsContainer main > section:first-child section:first-child .containerContentRatingAndStar {
+  display: flex;
+  gap: 0 24px;
+}
+.datailsContainer main > section:first-child section:first-child .contentRating {
+  min-width: 32px;
+  min-height: 32px;
+  text-align: center;
+  border: 1.5px solid #8A8A8A;
+  padding: 7px 8px 7px 7px;
+  border-radius: 8px;
+}
+.datailsContainer main > section:first-child section:first-child .star {
+  display: flex;
+  align-items: center;
+  color: #F2F2F2;
+}
+.datailsContainer main > section:first-child section:first-child .star img {
+  width: 32px;
+  margin-right: 4px;
 }
 .datailsContainer main > section:first-child section:last-child {
   position: relative;
-  margin-top: -70px;
-  padding: 0 20px;
+  margin-top: -92px;
+  padding: 0 16px;
 }
 .datailsContainer main > section:first-child h1 {
   display: inline-block;
   width: 100%;
   text-align: center;
-  font-size: 1.714rem;
+  font-size: 24px;
   font-weight: 700;
   color: #F2F2F2;
-  margin-bottom: 20px;
-}
-.datailsContainer main > section:first-child .contentRating {
-  display: inline-block;
-  min-width: 34px;
-  min-height: 34px;
-  text-align: center;
-  font-size: 1.714rem;
-  border: 1.5px solid #AAAAAA;
-  padding: 2px 4px 2px 3px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin-bottom: 24px;
 }
 .datailsContainer main > section:first-child .containerGenresEndDate {
-  margin-bottom: 10px;
-  line-height: 150%;
-}
-.datailsContainer main > section:first-child .imdb {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
 }
-.datailsContainer main > section:first-child .imdb img {
-  width: 38px;
-  margin-right: 10px;
+.datailsContainer main > section:first-child .containerGenresEndDate a {
+  padding: 12px 12px;
+  background-color: #333333;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
 }
-.datailsContainer main > section:first-child .containerSpans {
-  margin-bottom: 20px;
-}
-.datailsContainer main > section h2 {
-  font-size: 1.285rem;
-  font-weight: 400;
-  color: #F2F2F2;
-  margin-bottom: 10px;
+.datailsContainer main > section:first-child .containerGenresEndDate a span {
+  display: block;
 }
 .datailsContainer main > section p{
-  color: #AAAAAA;
-  margin-bottom: 30px;
-  line-height: 150%;
+  font-size: 14px;
+  color: #8A8A8A;
+  line-height: 20px;
+  margin-bottom: 24px;
+  text-align: justify;
 }
-.datailsContainer main > section:first-child a {
+.datailsContainer main > section:first-child button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 24px;
   padding: 20px 0;
-  font-size: 1rem;
-  color: #F2F2F2;
-  background: linear-gradient(100deg, #E100D8 -20%, #7809E7 100%);
-  text-decoration: none;
-  border-radius: 5px;
+  font-size: 16px;
+  color: #222222;
+  background: #FF4B4B;
+  border-radius: 8px;
   transition: 0.2s;
 }
-.datailsContainer main > section:first-child a img {
-  margin-right: 12px;
+.datailsContainer main > section:first-child button img {
+  margin-right: 8px;
 }
-.datailsContainer main > section:first-child a:hover {
+.datailsContainer main > section:first-child button:hover {
   filter: brightness(1.2);
   cursor: pointer;
 }
-.datailsContainer main > section h3 {
-  color: #F2F2F2;
-  font-size: 1rem;
-  font-weight: 400;
-}
-.datailsContainer main > section span {
-  color: #AAAAAA;
-}
 .datailsContainer main > section:nth-of-type(2) {
-  margin: 20px 20px 50px;
+  margin: 16px 16px 24px;
 }
-.datailsContainer main > section:nth-of-type(2) div {
-  background-color: #333;
-  padding: 1px 20px 20px 20px;
-  border-radius: 10px;
+.datailsContainer main > section:nth-of-type(2) .boxInfomation {
+  background-color: #333333;
+  padding: 16px;
+  border-radius: 8px;
+}
+.datailsContainer main > section:nth-of-type(2) .boxInfomation span {
+  font-size: 14px;
 }
 .datailsContainer main > section:nth-of-type(2) div h3 {
-  margin-bottom: 10px;
-  margin-top: 20px;
+  font-size: 14px;
+  color: #F2F2F2;
+  margin-bottom: 8px;
+  margin-top: 24px;
+  font-weight: 400;
+}
+.datailsContainer main > section:nth-of-type(2) div h3:first-child {
+  margin-top: 0;
+}
+.datailsContainer main > section:nth-of-type(2) .boxInfomation .boxNetworkLogo {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #8A8A8A;
+}
+.datailsContainer main > section:nth-of-type(2) .boxInfomation .boxNetworkLogo img {
+  max-width: 100%;
 }
 .datailsContainer main > section:nth-of-type(3) {
-  margin: 20px 20px 33px;
+  margin: 16px 16px 24px;
 }
 .datailsContainer main > section:nth-of-type(3) > div {
   display: flex;
   overflow-x: scroll;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding: 0 20px 17px;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 0 16px 9px;
 }
 .datailsContainer main > section:nth-of-type(3) > div > div {
   width: 95px;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #333;
 }
 .datailsContainer main > section:nth-of-type(3) > div > div + div {
-  margin-left: 10px;
+  margin-left: 8px;
 }
 .datailsContainer main > section:nth-of-type(3) > div > div img {
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 .datailsContainer main > section:nth-of-type(3) > div > div footer {
-  font-size: 0.714rem;
-  padding: 10px;
+  font-size: 10px;
+  padding: 8px;
   margin-top: -3px;
 }
 .datailsContainer main > section:nth-of-type(3) > div > div footer span:first-child {
   display: block;
   color: #F2F2F2;
   font-weight: 500;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .datailsContainer main > section:nth-of-type(4) {
-  margin: 0 20px;
+  margin: 0 16px;
 }
 .datailsContainer main > section:nth-of-type(4) div {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 .datailsContainer main > section:nth-of-type(4) iframe {
   width: 100%;
   max-height: 366px;
   max-width: 650px;
   height: calc((100vw - 40px) / 1.77);
-  border-radius: 10px;
+  border-radius: 8px;
 }
-.datailsContainer main > section:nth-of-type(4) iframe + iframe {
-  margin-top: 10px;
-}
+
