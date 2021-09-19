@@ -138,16 +138,16 @@ export default function Details({ movie }: movieProps) {
             <h3>Duração</h3>
             <div className={styles.containerSpans}>
               {
-                movie.runtime < 59 ?
+                movie.runtime < 60 ?
                   <span>{
                     `${movie.runtime}min`
                   }</span>
                   :
                   <span>{
                     movie.runtime === 60 ?
-                      `${(movie.runtime / 60).toFixed(0)}h`
+                      `1h`
                       :
-                      `${(movie.runtime / 60).toFixed(0)}h ${movie.runtime % 60}min`
+                      `${Math.trunc(movie.runtime / 60)}h ${movie.runtime % 60}min`
                   }</span>
               }
             </div>

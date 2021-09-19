@@ -145,16 +145,16 @@ export default function Details({ tv }: tvProps) {
               <span>{`${tv.number_of_episodes} Ep(s) .  `}</span>
               {
                 tv.episode_run_time.map((iten, index) => (
-                  iten < 59 ?
+                  iten < 60 ?
                     <span key={iten}>{
                       index != 0 ? `/ ${iten}min` : `${iten}min`
                     }</span>
                     :
                     <span key={iten}>{
                       iten === 60 ?
-                        index != 0 ? `/ ${(iten / 60).toFixed(0)}h` : `${(iten / 60).toFixed(0)}h`
+                        index != 0 ? `/ 1h` : `1h`
                         :
-                        index != 0 ? `/ ${(iten / 60).toFixed(0)}h ${iten % 60}min` : `${(iten / 60).toFixed(0)}h ${iten % 60}min`
+                        index != 0 ? `/ ${Math.trunc(iten / 60)}h ${iten % 60}min` : `${Math.trunc(iten / 60)}h ${iten % 60}min`
                     }</span>
                 ))
               }
