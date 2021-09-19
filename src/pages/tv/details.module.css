@@ -72,21 +72,21 @@
   color: #F2F2F2;
   margin-bottom: 24px;
 }
-.datailsContainer main > section:first-child .containerGenresEndDate {
+.datailsContainer main > section:first-child .containerGenres {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   margin-bottom: 24px;
 }
-.datailsContainer main > section:first-child .containerGenresEndDate a {
+.datailsContainer main > section:first-child .containerGenres a {
   padding: 12px 12px;
   background-color: #333333;
   border-radius: 20px;
   text-decoration: none;
   cursor: pointer;
 }
-.datailsContainer main > section:first-child .containerGenresEndDate a span {
+.datailsContainer main > section:first-child .containerGenres a span {
   display: block;
 }
 .datailsContainer main > section p{
@@ -143,7 +143,9 @@
   border-radius: 8px;
   background-color: #8A8A8A;
 }
-/* parou aqui */
+.datailsContainer main > section:nth-of-type(2) .boxInfomation .boxNetworkLogo img {
+  max-width: 100%;
+}
 .datailsContainer main > section:nth-of-type(3) {
   margin: 16px 16px 24px;
 }

@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import api from '../../services/api';
 import styles from './details.module.css';
-// import Header from '../../components/header';
 
 type tvProps = {
   tv: {
@@ -66,7 +65,6 @@ type tvProps = {
 export default function Details({ tv }: tvProps) {
   return (
     <div className={styles.datailsContainer}>
-      {/* <Header /> */}
       <main>
         <section>
           <section>
@@ -104,7 +102,7 @@ export default function Details({ tv }: tvProps) {
           </section>
           <section>
             <h1>{tv.name}</h1>
-            <div className={styles.containerGenresEndDate}>
+            <div className={styles.containerGenres}>
               {
                 tv.genres.map((genres) => (
                   <Link href={`/tv/genre/${genres.id}`} key={genres.id}>
