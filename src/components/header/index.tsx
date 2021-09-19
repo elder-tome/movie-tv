@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import Link from 'next/link'
 
@@ -9,14 +9,29 @@ import styles from './header.module.css';
 export default function Header() {
 
   const { search, loadSearch } = useContext(SearchContext);
+  const [open, setOpen] = useState(false);
 
   function handleInput(event: ChangeEvent<HTMLInputElement>) {
     loadSearch(event.target.value);
   }
 
+  function handleOnOpen() {
+    setOpen(true);
+  }
+  function handleOnClose() {
+    setOpen(false);
+  }
+
+  function handleClick() {
+    setOpen(false);
+  }
+
   return (
     <header className={styles.header}>
       <Menu
+        onOpen={handleOnOpen}
+        onClose={handleOnClose}
+        isOpen={open}
         className={styles.menu}
         customBurgerIcon={
           <img
@@ -25,29 +40,29 @@ export default function Header() {
           />
         }
         customCrossIcon={false}
-        width={280}
+        width={230}
       >
         <img src="/icons/logo.svg" alt="movie tv" />
         <nav className={styles.nav}>
           <ul>
             <li>
               <Link href="/">
-                <a>Home</a>
+                <a onClick={handleClick}>Home</a>
               </Link>
             </li>
             <li>
               <Link href="/movie">
-                <a>Filmes</a>
+                <a onClick={handleClick}>Filmes</a>
               </Link>
             </li>
             <li>
               <Link href="/tv">
-                <a>Séries</a>
+                <a onClick={handleClick}>Séries</a>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <a>Sobre</a>
+                <a onClick={handleClick}>Sobre</a>
               </Link>
             </li>
           </ul>
